@@ -6,7 +6,8 @@ on:
       - 'main'
 
   schedule:
-    - cron: '0 * * * *' # run every hour
+    # Runs at 00:00AM GMT+8 (16:00 UTC)
+    - cron: '0 16 * * *'
   workflow_dispatch:
     
 
