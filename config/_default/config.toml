@@ -4,9 +4,9 @@ title = "My New Hugo Site"
 theme = "PaperMod"
 
 [params]
-    [params.homeInfoParames]
-        Title = "Hi there wave"
-        Content = "welcome to my blog"
+    [params.homeInfoParams]
+        title = "Hi there wave"
+        content = "welcome to my blog"
 
 [menu]
     [[menu.main]]
