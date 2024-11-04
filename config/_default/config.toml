@@ -1,11 +1,11 @@
 baseURL = "https://gessiegulugulu.github.io/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "🌟 gessiegulugulu"
 theme = "PaperMod"
 
 [params]
     [params.homeInfoParams]
-        title = "Hi there wave"
+        title = "Hi there 👋"
         content = "welcome to my blog"
 
 [menu]
@@ -14,15 +14,20 @@ theme = "PaperMod"
         name = "about"
         url = "/about/"
         weight = 8
-    [[menu.main]]
-        identifier = "categories"
-        name = "categories"
-        url = "/categories/"
-        weight = 8
+#    [[menu.main]]
+#        identifier = "categories"
+#        name = "categories"
+#        url = "/categories/"
+#        weight = 8
     [[menu.main]]
         identifier = "tags"
         name = "tags"
         url = "/tags/"
+        weight = 8
+    [[menu.main]]
+        identifier = "archives"
+        name = "archives"
+        url = "/archives/"
         weight = 8
     [[menu.main]]
         identifier = "series"
