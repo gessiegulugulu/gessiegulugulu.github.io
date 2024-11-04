@@ -4,13 +4,14 @@ title = "🌟 gessiegulugulu"
 theme = "PaperMod"
 
 [params]
+    rss = true
     showRssButtonInSectionTermList = true
     [params.homeInfoParams]
         title = "Hi there 👋"
         content = "welcome to my blog"
     [params.assets]
-        favicon = "👉"
-
+        favicon = "static/pointright.svg"
+        
 [menu]
     [[menu.main]]
         identifier = "about"
