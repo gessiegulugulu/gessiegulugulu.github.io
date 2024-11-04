@@ -1,6 +1,4 @@
 version = "0.3.X"
-defaultTheme: auto
-ShowReadingTime = true
 [page]
 [page.math]
 enable = true
@@ -10,6 +8,3 @@ inlineLeftDelimiter = "\\("
 inlineRightDelimiter = "\\)"
 copyTex = true
 mhchem = true
-[homeInfoParames]
-Title = "Hi there wave"
-Content = "welcome to my blog"
