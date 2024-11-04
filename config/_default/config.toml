@@ -3,6 +3,29 @@ languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "PaperMod"
 
-[homeInfoParames]
-    Title = "Hi there wave"
-    Content = "welcome to my blog"
+[params]
+    [params.homeInfoParames]
+        Title = "Hi there wave"
+        Content = "welcome to my blog"
+
+[menu]
+    [[menu.main]]
+        identifier = "about"
+        name = "about"
+        url = "/about/"
+        weight = 8
+    [[menu.main]]
+        identifier = "categories"
+        name = "categories"
+        url = "/categories/"
+        weight = 8
+    [[menu.main]]
+        identifier = "tags"
+        name = "tags"
+        url = "/tags/"
+        weight = 8
+    [[menu.main]]
+        identifier = "series"
+        name = "series"
+        url = "/series/"
+        weight = 8
