@@ -2,3 +2,7 @@ baseURL = "https://gessiegulugulu.github.io/"
 languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "PaperMod"
+
+[homeInfoParames]
+    Title = "Hi there wave"
+    Content = "welcome to my blog"
