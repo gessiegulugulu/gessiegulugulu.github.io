@@ -5,11 +5,20 @@ theme = "PaperMod"
 
 enableInlineShortcodes = true
 enableEmoji = true
-math = true
+enableRobotsTXT = true
 
 [params]
     ShowRssButtonInSectionTermList = true
     ShowToc = true
+    [params.page]
+        [params.page.math]
+            enable = true
+            blockLeftDelimiter = "\\["
+            blockRightDelimiter = "\\]"
+            inlineLeftDelimiter = "\\("
+            inlineRightDelimiter = "\\)"
+            copyTex = true
+            mhchem = true
     [params.homeInfoParams]
         title = "Hi there 👋"
         content = "welcome to my blog"
