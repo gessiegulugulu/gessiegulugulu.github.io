@@ -6,10 +6,14 @@ theme = "PaperMod"
 enableInlineShortcodes = true
 enableEmoji = true
 enableRobotsTXT = true
-
+pygmentsUseClasses = true
+[minify]
+    disableXML = true
 [params]
     ShowRssButtonInSectionTermList = true
     ShowToc = true
+    ShowReadingTime = true
+    ShowCodeCopyButtons = true
 #    [params.page]
 #        [params.page.math]
 #            enable = true
@@ -93,7 +97,6 @@ enableRobotsTXT = true
         [markup.goldmark.renderer]
             hardWraps = false
             unsafe = true
-            xhtml = false
     [markup.highlight]
         anchorLineNos = false
         codeFences = true
