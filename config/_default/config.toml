@@ -4,7 +4,6 @@ title = "🌟 gessiegulugulu"
 theme = "PaperMod"
 
 enableInlineShortcodes = true
-enableRobotsTXT = true
 enableEmoji = true
 
 [params]
