@@ -4,10 +4,10 @@ title = "🌟 gessiegulugulu"
 theme = "PaperMod"
 
 enableInlineShortcodes = true
-enableEmoji = true
+#enableEmoji = true
 
 [params]
-    ShowRssButtonInSectionTermList = true
+#    ShowRssButtonInSectionTermList = true
     ShowToc = true
     [params.homeInfoParams]
         title = "Hi there 👋"
