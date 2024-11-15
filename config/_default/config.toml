@@ -2,7 +2,7 @@ baseURL = "https://gessiegulugulu.github.io/"
 languageCode = "en-us"
 title = "🌟 gessiegulugulu"
 theme = "PaperMod"
-enableInlineShortcodes: true
+enableInlineShortcodes = true
 
 [params]
     rss = true
@@ -10,9 +10,9 @@ enableInlineShortcodes: true
     [params.homeInfoParams]
         title = "Hi there 👋"
         content = "welcome to my blog"
-        [[params.homeInfoParams.socialIcons]]
-            name = "github"
-            url = "https://github.com/gessiegulugulu"
+#   [params.socialIcons]
+#       name = "github"
+#       url = "https://github.com/gessiegulugulu"
     [params.assets]
         favicon = "static/pointright.svg"
         
