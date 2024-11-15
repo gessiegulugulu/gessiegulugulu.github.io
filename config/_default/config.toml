@@ -5,6 +5,7 @@ theme = "PaperMod"
 
 enableInlineShortcodes = true
 enableEmoji = true
+math = true
 
 [params]
     ShowRssButtonInSectionTermList = true
