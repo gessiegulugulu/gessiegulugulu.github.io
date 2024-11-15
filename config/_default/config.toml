@@ -10,10 +10,9 @@ enableInlineShortcodes: true
     [params.homeInfoParams]
         title = "Hi there 👋"
         content = "welcome to my blog"
-        socialIcons = [
-            {name = "github", url = "https://github.com/gessiegulugulu"}
-        ]
-
+        [[params.homeInfoParams.socialIcons]]
+            name = "github"
+            url = "https://github.com/gessiegulugulu"
     [params.assets]
         favicon = "static/pointright.svg"
         
