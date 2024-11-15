@@ -7,6 +7,7 @@ enableInlineShortcodes = true
 enableEmoji = true
 enableRobotsTXT = true
 pygmentsUseClasses = true
+
 [minify]
     disableXML = true
 [params]
