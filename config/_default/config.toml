@@ -8,8 +8,8 @@ enableRobotsTXT = true
 enableEmoji = true
 
 [params]
-    rss = true
-    showRssButtonInSectionTermList = true
+    ShowRssButtonInSectionTermList = true
+    ShowToc: true
     [params.homeInfoParams]
         title = "Hi there 👋"
         content = "welcome to my blog"
