@@ -4,17 +4,17 @@ title = "🌟 gessiegulugulu"
 theme = "PaperMod"
 
 enableInlineShortcodes = true
-#enableEmoji = true
+enableEmoji = true
 
 [params]
-#    ShowRssButtonInSectionTermList = true
+    ShowRssButtonInSectionTermList = true
     ShowToc = true
     [params.homeInfoParams]
         title = "Hi there 👋"
         content = "welcome to my blog"
-    [params.socialIcons]
-        name = "github"
-        url = "https://github.com/gessiegulugulu"
+#    [params.socialIcons]
+#        name = "github"
+#        url = "https://github.com/gessiegulugulu"
     [params.assets]
         favicon = "static/pointright.svg"
         
