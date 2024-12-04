@@ -11,6 +11,7 @@ pygmentsUseClasses = true
 [minify]
     disableXML = true
 [params]
+    env = "production"
     ShowRssButtonInSectionTermList = true
     ShowToc = true
     ShowReadingTime = true
@@ -54,11 +55,11 @@ pygmentsUseClasses = true
         name = "archives"
         url = "/archives/"
         weight = 8
-    [[menu.main]]
-        identifier = "series"
-        name = "series"
-        url = "/series/"
-        weight = 8
+#    [[menu.main]]
+#        identifier = "series"
+#        name = "series"
+#        url = "/series/"
+#        weight = 8
 
 [markup]
     defaultMarkdownHandler = 'goldmark'
