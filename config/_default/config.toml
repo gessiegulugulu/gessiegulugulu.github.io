@@ -88,8 +88,8 @@ pygmentsUseClasses = true
         [markup.goldmark.extensions.passthrough]
             enable = true
         [markup.goldmark.extensions.passthrough.delimiters]
-            block = [['\[', '\]']]
-            inline = [['\(', '\)']]
+            block = [['\\[', '\\]']]
+            inline = [['\\(', '\\)']]
         [markup.goldmark.parser]
             autoHeadingID = true
             autoHeadingIDType = 'github'
