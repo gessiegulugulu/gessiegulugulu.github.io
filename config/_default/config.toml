@@ -16,15 +16,15 @@ pygmentsUseClasses = true
     ShowToc = true
     ShowReadingTime = true
     ShowCodeCopyButtons = true
-#    [params.page]
-#        [params.page.math]
-#            enable = true
-#            blockLeftDelimiter = "\\["
-#            blockRightDelimiter = "\\]"
-#            inlineLeftDelimiter = "\\("
-#            inlineRightDelimiter = "\\)"
-#            copyTex = true
-#            mhchem = true
+    [params.page]
+        [params.page.math]
+            enable = true
+            blockLeftDelimiter = "\\["
+            blockRightDelimiter = "\\]"
+            inlineLeftDelimiter = "\\("
+            inlineRightDelimiter = "\\)"
+            copyTex = true
+            mhchem = true
     [params.homeInfoParams]
         title = "Hi there 👋"
         content = "welcome to my blog"
