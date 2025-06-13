@@ -16,6 +16,7 @@ pygmentsUseClasses = true
     ShowToc = true
     ShowReadingTime = true
     ShowCodeCopyButtons = true
+    customCSS = ["css/extended/custom-font.css"]
     [params.page]
         [params.page.math]
             enable = true
