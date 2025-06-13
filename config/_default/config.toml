@@ -35,7 +35,11 @@ pygmentsUseClasses = true
     [[params.socialIcons]]
         name = "github"
         url = "https://github.com/gessiegulugulu"
-        
+
+[permalinks]
+    page  = "/:title"
+    posts = "/:sections/:title"
+
 [menu]
     [[menu.main]]
         identifier = "about"
