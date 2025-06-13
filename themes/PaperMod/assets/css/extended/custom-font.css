@@ -3,8 +3,8 @@
 /* 全局正文 */
 body {
   font-family: 'Roboto', sans-serif;
-  font-size: 15px;
-  line-height: 1.2;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
 /* 标题 */
@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 h2 {
   font-size: 1.5rem;

@@ -11,6 +11,9 @@ pygmentsUseClasses = true
 [minify]
     disableXML = true
 [params]
+    math = true
+    mathjax = true
+    mathjaxVersion = "3"
     env = "production"
     ShowRssButtonInSectionTermList = true
     ShowToc = true
