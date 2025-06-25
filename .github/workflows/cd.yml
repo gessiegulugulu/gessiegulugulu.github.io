@@ -67,7 +67,7 @@ jobs:
          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
         run: |
           npm install
-          npm starts
+          npm start
 
           find ./content -type f -name "*-*" -print0 | while IFS= read -r -d '' file; do
             dir=$(dirname "$file")
