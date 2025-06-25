@@ -66,16 +66,23 @@ jobs:
         env: # Or as an environment variable
          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
         run: |
+          set -x
           npm install
           npm start
+          
+          echo "Before rename:"
+          find ./content -type f -name "*-*" -print
 
           find ./content -type f -name "*-*" -print0 | while IFS= read -r -d '' file; do
             dir=$(dirname "$file")
             base=$(basename "$file")
-            # newbase 是把最后一个 '-' 及之后的字符都去掉
             newbase="${base%-*}"
+            echo "Renaming: '$base' → '$newbase'"
             mv "$file" "$dir/$newbase"
           done
+
+          echo "After rename:"
+          find ./content -type f -name "*-*" -print
 
           hugo
 
