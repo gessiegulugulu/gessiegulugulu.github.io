@@ -69,7 +69,7 @@ jobs:
           set -x
           npm install
           npm start
-          
+
           echo "Before rename:"
           find ./content -type f -name "*-*" -print
 
@@ -78,7 +78,7 @@ jobs:
             base=$(basename "$file")
             newbase="${base%-*}"
             echo "Renaming: '$base' → '$newbase'"
-            mv "$file" "$dir/$newbase"
+            mv "$file" "$dir/$newbase.md"
           done
 
           echo "After rename:"
