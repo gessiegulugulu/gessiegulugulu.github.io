@@ -77,7 +77,7 @@ jobs:
             dir=$(dirname "$file")
             base=$(basename "$file")
             newbase="${base%-*}"
-            echo "Renaming: '$base' → '$newbase'"
+            echo "Renaming: '$base' → '$newbase'.md"
             mv "$file" "$dir/$newbase.md"
           done
 
