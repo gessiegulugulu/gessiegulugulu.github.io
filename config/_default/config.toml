@@ -21,6 +21,7 @@ hasCJKLanguage = true
     ShowReadingTime = true
     ShowCodeCopyButtons = true
     customCSS = ["css/extended/custom-font.css"]
+    google_site_verification = "ToYyhTxkhh1_Qu1KB-fe9-1lA9N_c2ovMgEQWxxauPQ"
     [params.page]
         [params.page.math]
             enable = true
