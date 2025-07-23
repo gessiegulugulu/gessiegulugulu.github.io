@@ -23,6 +23,7 @@ hasCJKLanguage = true
     customCSS = ["css/extended/custom-font.css"]
     [params.analytics.google]
         SiteVerificationTag = "ToYyhTxkhh1_Qu1KB-fe9-1lA9N_c2ovMgEQWxxauPQ"
+        AnalyticsId = "G-XF3LT7P5J1"
     [params.page]
         [params.page.math]
             enable = true

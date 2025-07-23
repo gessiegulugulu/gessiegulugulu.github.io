@@ -35,6 +35,17 @@
 {{- if site.Params.analytics.naver.SiteVerificationTag }}
 <meta name="naver-site-verification" content="{{ site.Params.analytics.naver.SiteVerificationTag }}">
 {{- end }}
+{{- if site.Params.analytics.google.AnalyticsId}}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{site.Params.analytics.google.AnalyticsId}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{site.Params.analytics.google.AnalyticsId}}');
+</script>
+{{- end}}
 
 {{- /* Styles */}}
 
