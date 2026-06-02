@@ -9,8 +9,13 @@
     {{- partial "head.html" . }}
 </head>
 
+{{- $isAboutPage := false -}}
+{{- with .File -}}
+{{- $isAboutPage = eq .ContentBaseName `about` -}}
+{{- end -}}
+
 <body class="
-{{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) -}}
+{{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`) $isAboutPage) -}}
 {{- print "list" -}}
 {{- end -}}
 {{- if eq site.Params.defaultTheme `dark` -}}
