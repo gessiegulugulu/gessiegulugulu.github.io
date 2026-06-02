@@ -108,8 +108,15 @@ ${children || ""}
   </details>`;
 };
 
+const tableCell = (text: string) => {
+  return text
+    .trim()
+    .replace(/\|/g, "\\|")
+    .replace(/\r\n|\r|\n/g, "<br>");
+};
+
 export const table = (cells: string[][]) => {
-  return markdownTable(cells);
+  return markdownTable(cells.map((row) => row.map(tableCell)));
 };
 
 export const plainText = (textArray: RichTextItemResponse[]) => {

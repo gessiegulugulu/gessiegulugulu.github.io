@@ -273,10 +273,9 @@ export class NotionToMarkdown {
         let tableArr: string[][] = [];
         if (has_children) {
           const tableRows = await getBlockChildren(this.notionClient, id, 100);
-          // console.log(">>", tableRows);
           let rowsPromise = tableRows?.map(async (row) => {
-            const { type } = row as any;
-            const cells = (row as any)[type]["cells"];
+            if (!isFullBlock(row) || row.type !== "table_row") return [];
+            const cells = row.table_row.cells;
 
             /**
              * this is more like a hack since matching the type text was
@@ -291,12 +290,11 @@ export class NotionToMarkdown {
                 } as GetBlockResponse)
             );
 
-            const cellStringArr = await Promise.all(cellStringPromise);
-            // console.log("~~", cellStringArr);
-            tableArr.push(cellStringArr);
-            // console.log(tableArr);
+            return await Promise.all(cellStringPromise);
           });
-          await Promise.all(rowsPromise || []);
+          tableArr = (await Promise.all(rowsPromise || [])).filter(
+            (row) => row.length > 0
+          );
         }
         return md.table(tableArr);
       }
