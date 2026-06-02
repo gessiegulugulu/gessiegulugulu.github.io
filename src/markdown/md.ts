@@ -15,16 +15,29 @@ export const inlineCode = (text: string) => {
   return `\`${text}\``;
 };
 
+const wrapInlineMarker = (text: string, marker: string) => {
+  const leadingSpace = text.match(/^\s*/)?.[0] || "";
+  const trailingSpace = text.match(/\s*$/)?.[0] || "";
+  const content = text.slice(
+    leadingSpace.length,
+    text.length - trailingSpace.length
+  );
+
+  if (!content) return text;
+
+  return `${leadingSpace}${marker}${content}${marker}${trailingSpace}`;
+};
+
 export const bold = (text: string) => {
-  return `**${text}**`;
+  return wrapInlineMarker(text, "**");
 };
 
 export const italic = (text: string) => {
-  return `_${text}_`;
+  return wrapInlineMarker(text, "_");
 };
 
 export const strikethrough = (text: string) => {
-  return `~~${text}~~`;
+  return wrapInlineMarker(text, "~~");
 };
 
 export const underline = (text: string) => {
