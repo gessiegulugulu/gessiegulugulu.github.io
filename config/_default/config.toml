@@ -61,6 +61,11 @@ hasCJKLanguage = true
         url = "/tags/"
         weight = 8
     [[menu.main]]
+        identifier = "sport"
+        name = "sport"
+        url = "/sport/"
+        weight = 8
+    [[menu.main]]
         identifier = "archives"
         name = "archives"
         url = "/archives/"
