@@ -7,35 +7,74 @@ summary: Garmin 训练计划与每周复盘
 <style>
   .sport-dashboard {
     margin-top: 1.5rem;
+    line-height: 1.75;
+  }
+
+  .sport-dashboard .sport-hero {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) + 8px);
+    padding: 1.7rem 1.3rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    background:
+      radial-gradient(circle at top left, rgba(120, 160, 255, 0.16), transparent 32rem),
+      radial-gradient(circle at bottom right, rgba(90, 180, 140, 0.12), transparent 28rem),
+      var(--entry);
   }
 
   .sport-dashboard .sport-meta {
     color: var(--secondary);
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.86rem;
+    margin: 0 0 0.45rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .sport-dashboard .sport-title {
+    margin: 0;
+    font-size: clamp(1.6rem, 4vw, 2.35rem);
+    line-height: 1.25;
+  }
+
+  .sport-dashboard .sport-subtitle {
+    margin: 0.75rem auto 0;
+    max-width: 42rem;
+    color: var(--secondary);
   }
 
   .sport-dashboard .sport-nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem;
-    margin: 1.2rem 0 2rem;
+    justify-content: center;
+    gap: 0.7rem;
+    margin: 1.5rem auto 2.2rem;
   }
 
   .sport-dashboard .sport-nav a {
     border: 1px solid var(--border);
     border-radius: 999px;
-    padding: 0.35rem 0.8rem;
+    padding: 0.42rem 1rem;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
+    background: var(--entry);
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .sport-dashboard .sport-nav a:hover {
+    transform: translateY(-1px);
+    border-color: var(--primary);
+    background: var(--code-bg);
   }
 
   .sport-dashboard .sport-card {
     border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.2rem;
-    margin: 1.2rem 0;
+    border-radius: calc(var(--radius) + 4px);
+    padding: 1.35rem;
+    margin: 1.35rem 0;
     background: var(--entry);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
   }
 
   .sport-dashboard h2,
@@ -43,12 +82,20 @@ summary: Garmin 训练计划与每周复盘
   .sport-dashboard h4,
   .sport-dashboard h5,
   .sport-dashboard h6 {
-    margin-top: 1.6em;
+    margin-top: 1.5em;
+    margin-bottom: 0.65em;
+  }
+
+  .sport-dashboard #plan > h2:first-child,
+  .sport-dashboard #history > h2:first-child {
+    margin-top: 0;
   }
 
   .sport-dashboard .table-wrap {
     overflow-x: auto;
     margin: 1rem 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
   }
 
   .sport-dashboard table {
@@ -61,45 +108,168 @@ summary: Garmin 训练计划与每周复盘
   .sport-dashboard th,
   .sport-dashboard td {
     border-bottom: 1px solid var(--border);
-    padding: 0.65rem 0.75rem;
+    padding: 0.7rem 0.8rem;
     text-align: left;
     vertical-align: top;
+  }
+
+  .sport-dashboard tr:last-child td {
+    border-bottom: 0;
   }
 
   .sport-dashboard th {
     background: var(--code-bg);
     font-weight: 700;
+    white-space: nowrap;
   }
 
   .sport-dashboard code {
     background: var(--code-bg);
-    border-radius: 4px;
-    padding: 0.1em 0.35em;
+    border-radius: 5px;
+    padding: 0.12em 0.38em;
+    font-size: 0.92em;
   }
 
-  .sport-dashboard details {
+  .sport-dashboard ul {
+    padding-left: 1.35rem;
+  }
+
+  .sport-dashboard li + li {
+    margin-top: 0.25rem;
+  }
+
+  .sport-dashboard hr {
+    border: 0;
     border-top: 1px solid var(--border);
+    margin: 1.25rem 0;
   }
 
-  .sport-dashboard details:first-of-type {
-    border-top: 0;
+  .sport-dashboard .sport-history-list {
+    position: relative;
+    margin-top: 0.2rem;
   }
 
-  .sport-dashboard summary {
+  .sport-dashboard .sport-history-item {
+    position: relative;
+    border: 0;
+    margin-left: 0.85rem;
+    padding-left: 1.6rem;
+  }
+
+  .sport-dashboard .sport-history-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+    bottom: -0.2rem;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .sport-dashboard .sport-history-item:last-child::before {
+    bottom: 1.2rem;
+  }
+
+  .sport-dashboard .sport-history-item summary {
+    position: relative;
     cursor: pointer;
-    padding: 1rem 0;
+    list-style: none;
+    padding: 0.9rem 0 0.9rem 0.2rem;
     font-weight: 700;
+    color: var(--primary);
+    outline: none;
+  }
+
+  .sport-dashboard .sport-history-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .sport-dashboard .sport-history-item summary::before {
+    content: "";
+    position: absolute;
+    left: -1.72rem;
+    top: 1.35rem;
+    width: 0.72rem;
+    height: 0.72rem;
+    border-radius: 999px;
+    background: var(--entry);
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 0 4px var(--theme);
+  }
+
+  .sport-dashboard .sport-history-item summary::after {
+    content: "展开";
+    display: inline-block;
+    margin-left: 0.65rem;
+    color: var(--secondary);
+    font-size: 0.78rem;
+    font-weight: 500;
+    line-height: 1.4;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.12rem 0.48rem;
+    vertical-align: middle;
+  }
+
+  .sport-dashboard .sport-history-item[open] summary::after {
+    content: "收起";
+  }
+
+  .sport-dashboard .sport-history-item[open] summary::before {
+    background: var(--primary);
   }
 
   .sport-dashboard .sport-markdown-body {
-    padding-bottom: 1.2rem;
+    margin: 0.1rem 0 1.2rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--theme);
+  }
+
+  .sport-dashboard .sport-markdown-body > *:first-child {
+    margin-top: 0;
+  }
+
+  .sport-dashboard .sport-markdown-body > *:last-child {
+    margin-bottom: 0;
+  }
+
+  .sport-dashboard .sport-empty {
+    margin: 0;
+    color: var(--secondary);
+  }
+
+  @media (max-width: 720px) {
+    .sport-dashboard .sport-hero {
+      padding: 1.3rem 1rem;
+    }
+
+    .sport-dashboard .sport-card {
+      padding: 1rem;
+    }
+
+    .sport-dashboard .sport-history-item {
+      margin-left: 0.5rem;
+      padding-left: 1.25rem;
+    }
+
+    .sport-dashboard .sport-history-item summary::before {
+      left: -1.37rem;
+    }
+
+    .sport-dashboard .sport-markdown-body {
+      padding: 0.9rem;
+    }
   }
 </style>
 
 <div class="sport-dashboard">
-  <p class="sport-meta">SPORT / WEEKLY LOG · 页面生成于 2026-06-05 09:34 UTC</p>
-
-  <p>当前七日训练安排，以及按时间归档的训练复盘。</p>
+  <header class="sport-hero">
+    <p class="sport-meta">SPORT / WEEKLY LOG · 页面生成于 2026-06-05 09:51 UTC</p>
+    <h1 class="sport-title">训练计划与复盘</h1>
+    <p class="sport-subtitle">当前七日训练安排，以及按时间归档的训练复盘。</p>
+  </header>
 
   <nav class="sport-nav">
     <a href="#plan">本周计划</a>
@@ -198,7 +368,8 @@ summary: Garmin 训练计划与每周复盘
 
   <section id="history" class="sport-card">
     <h2>历史复盘</h2>
-    <details class="sport-history-item" open><summary>2026-06-05 周复盘</summary><div class="sport-markdown-body"><h2>七日训练复盘</h2>
+    <div class="sport-history-list">
+      <details class="sport-history-item"><summary>2026-06-05 周复盘</summary><div class="sport-markdown-body"><h2>七日训练复盘</h2>
 <p>复盘范围：2026-05-29 至 2026-06-04<br>计划范围：2026-06-05 至 2026-06-11</p>
 <h3>训练摘要</h3>
 <ul>
@@ -233,5 +404,6 @@ summary: Garmin 训练计划与每周复盘
 <li>Garmin未记录可靠的哑铃重量，计划使用RPE和重复次数，不推测负重。</li>
 <li>自动动作识别存在误差，动作判断以用户在 <code>memory.md</code> 中确认的项目为准。</li>
 </ul></div></details>
+    </div>
   </section>
 </div>
