@@ -9,7 +9,7 @@ import { isFullPageOrDatabase } from "@notionhq/client/build/src/helpers";
 dotenv.config();
 
 async function main() {
-  if (process.env.NOTION_TOKEN === "")
+  if (!process.env.NOTION_TOKEN)
     throw Error("The NOTION_TOKEN environment vairable is not set.");
   const config = await loadConfig();
   console.info("[Info] Config loaded ");
@@ -47,7 +47,9 @@ async function main() {
   // remove posts that exist locally but not in Notion Database
   const contentFiles = getAllContentFiles("content");
   for (const file of contentFiles) {
-    if (!page_ids.includes(file.metadata.id)) {
+    // Files without Notion metadata are maintained directly in the repository.
+    // Keep them when pruning pages removed from a mounted Notion database.
+    if (file.metadata.id && !page_ids.includes(file.metadata.id)) {
       fs.removeSync(file.filepath);
     }
   }
