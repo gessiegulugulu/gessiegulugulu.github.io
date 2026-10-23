@@ -66,25 +66,23 @@ jobs:
         run: npm ci
 
       - name: Sync content from Notion
-        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
         run: |
           set -euo pipefail
 
-          for attempt in 1 2 3 4; do
+          for attempt in $(seq 1 12); do
             if npm start; then
               exit 0
             fi
 
-            if [ "$attempt" -eq 4 ]; then
-              echo "Notion sync failed after 4 attempts."
+            if [ "$attempt" -eq 12 ]; then
+              echo "Notion sync failed after 12 attempts."
               exit 1
             fi
 
-            wait_seconds=$((attempt * 30))
-            echo "Notion API rate limited or temporarily unavailable; retrying in ${wait_seconds}s."
-            sleep "$wait_seconds"
+            echo "Notion API rate limited or temporarily unavailable; retrying in 30s."
+            sleep 30
           done
 
       - name: Build with Hugo
